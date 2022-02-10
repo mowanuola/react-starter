@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { styled } from 'twin.macro'
 import { InputBase, FormControl, InputLabel } from '@mui/material'
 
@@ -15,9 +14,4 @@ export const StyledInput = ({ label, className: classes }: any) => {
       <Input className="rounded p-2" name={label} />
     </FormControl>
   )
-}
-
-StyledInput.propTypes = {
-  label: PropTypes.string,
-  className: PropTypes.string,
 }
