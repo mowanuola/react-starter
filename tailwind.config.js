@@ -1,29 +1,35 @@
 module.exports = {
   content: ['./index.html', './src/**/*.tsx'],
+  important: true,
   theme: {
     extend: {
       colors: {
-        primary: 'hsla(183, 80%, 29%, 1)',
-        error: 'hsl(0deg, 79%, 63%)',
+        primary: 'hsla(18, 90%, 57%, 1)',
+        'primary-light': 'hsla(18, 90%, 57%, 0.2)',
+        error: 'hsla(3, 100%, 61%, 1)',
+        success: 'hsla(162, 95%, 41%, 1)',
+        grey: 'hsla(40, 3%, 60%, 1)',
+        'cool-grey': 'hsla(206, 6%, 45%, 1)',
+        'light-grey': '',
+        'dark-grey': 'hsla(0, 0%, 20%, 1)',
       },
       backgroundColor: {
-        primary: 'hsla(183, 80%, 29%, 1)', // a darker hue for improved A11y
-        'primary-light': 'hsla(184, 47%, 93%, 1)',
-        light: 'rgba(113, 135, 156, 0.1)',
+        primary: 'hsla(18, 90%, 57%, 1)', // a darker hue for improved A11y
+        light: 'hsla(198, 21%, 88%, 0.24)',
       },
       textColor: {
-        primary: 'hsla(183, 80%, 29%, 1)',
+        primary: 'hsla(18, 90%, 57%, 1)',
         soft: 'hsla(210, 18%, 40%, 1)',
       },
       borderColor: {
         default: 'hsl(205deg 25% 91%)',
+        transparent: 'transparent',
       },
       fontSize: {
         title: ['1.75rem', '2.125rem'],
       },
       fontFamily: {
-        tomato: ['Tomato', 'ui-monospace'],
-        sans: ['DM Sans', 'ui-sans-serif', 'system-ui'],
+        hk: ['HK Grotesk', 'ui-sans-serif', 'system-ui'],
       },
     },
   },

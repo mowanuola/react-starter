@@ -8,6 +8,10 @@ export default defineConfig({
     tsconfigPaths({
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.svg'],
     }),
-    react(),
+    react({
+      babel: {
+        plugins: ['babel-plugin-macros'],
+      },
+    }),
   ],
 })

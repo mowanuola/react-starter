@@ -15,7 +15,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react", // for the css prop
+    "types": ["@types/jest"],
     "baseUrl": "./src"
   },
+  "files": ["./src/twin.d.ts"],
   "include": ["./src"]
 }
