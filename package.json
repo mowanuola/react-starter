@@ -45,8 +45,8 @@
     "vite-tsconfig-paths": "^3.4.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{ts,tsx,js}": "yarn lint",
+    "*.css": "yarn format"
   },
   "jest": {
     "testEnvironment": "jsdom",
