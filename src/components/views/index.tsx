@@ -1,4 +1,4 @@
-import { Button, Checkbox, CircularProgress } from '@mui/material'
+import { Button, Checkbox } from '@mui/material'
 import { CheckCircle, RadioButtonUncheckedOutlined } from '@mui/icons-material'
 import { StyledInput } from 'components/common/StyledInput'
 // import tw from 'twin.macro'

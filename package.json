@@ -6,8 +6,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "lint": "eslint --cache --fix",
-    "test": "jest"
+    "format": "prettier --write",
+    "test": "jest",
+    "lint": "eslint --cache --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -20,6 +21,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.33",
@@ -28,15 +31,18 @@
     "@typescript-eslint/parser": "^5.11.0",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
+    "babel-plugin-auto-import": "^1.1.0",
     "babel-plugin-macros": "^3.1.0",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.28.0",
     "husky": ">=6",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.0",
     "lint-staged": ">=10",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
+    "regenerator-runtime": "^0.13.9",
     "tailwindcss": "^3.0.18",
     "ts-jest": "^27.1.3",
     "twin.macro": "^2.8.2",
@@ -51,9 +57,18 @@
   "jest": {
     "testEnvironment": "jsdom",
     "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.ts"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
     "moduleDirectories": [
-      "<rootDir>/node_modules",
-      "<rootDir>/src"
+      "node_modules",
+      "src"
+    ],
+    "extensionsToTreatAsEsm": [
+      ".ts"
     ],
     "globals": {
       "ts-jest": {
@@ -64,11 +79,11 @@
           ]
         }
       }
-    },
-    "babelMacros": {
-      "twin": {
-        "preset": "emotion"
-      }
+    }
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
     }
   }
 }

@@ -10,7 +10,15 @@ export default defineConfig({
     }),
     react({
       babel: {
-        plugins: ['babel-plugin-macros'],
+        plugins: [
+          'babel-plugin-macros',
+          [
+            'auto-import',
+            {
+              declarations: [{ default: 'React', path: 'react' }],
+            },
+          ],
+        ],
       },
     }),
   ],
