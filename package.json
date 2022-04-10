@@ -2,13 +2,15 @@
   "name": "react-starter",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev:user": "vite",
+    "dev:admin": "VITE_IS_ADMIN=true vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
+    "lint": "eslint --cache --fix",
     "format": "prettier --write",
     "test": "jest",
-    "lint": "eslint --cache --fix"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
