@@ -1,4 +1,4 @@
-import Main from 'components/views/user'
+import Main from 'components/views/admin'
 
 function App() {
   return (
