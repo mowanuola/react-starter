@@ -14,6 +14,6 @@ jobs:
       - name: Publish
         env:
           VITE_IS_ADMIN: true
-        run: yarn install
-          yarn build
-          CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} npx wrangler pages publish --project-name=react-starter
+      - run: yarn install
+      - run: yarn build
+      - run: CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} npx wrangler pages publish --project-name=react-starter
