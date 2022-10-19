@@ -13,6 +13,8 @@ jobs:
       VITE_IS_ADMIN: true
     steps:
       - uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn build
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
