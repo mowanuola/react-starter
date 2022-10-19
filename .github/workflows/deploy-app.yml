@@ -9,6 +9,8 @@ jobs:
   deploy-admin-app:
     runs-on: ubuntu-latest
     name: Deploy
+    env:
+      VITE_IS_ADMIN: true
     steps:
       - uses: actions/checkout@v2
       - name: Publish
@@ -16,4 +18,4 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{secrets.CF_API_TOKEN}}
-          command: pages publish --project-name=react-starter
+          command: pages publish dist --project-name=react-starter
