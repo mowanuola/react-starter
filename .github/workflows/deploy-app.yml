@@ -9,11 +9,10 @@ jobs:
   deploy-admin-app:
     runs-on: ubuntu-latest
     name: Deploy
+    env:
+      VITE_IS_ADMIN: true
     steps:
       - uses: actions/checkout@v2
-      - name: Publish
-        env:
-          VITE_IS_ADMIN: true
       - run: yarn install
       - run: yarn build
       - run: CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }} npx wrangler pages publish dist --project-name=react-starter
