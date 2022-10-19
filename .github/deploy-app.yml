@@ -1,0 +1,19 @@
+
+name: Deploy
+
+on:
+  push:
+    branches: ['admin/**', staging, master]
+  pull_request:
+    branches: [staging, master]
+jobs:
+  deploy-admin-app:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages publish --project-name=react-starter
