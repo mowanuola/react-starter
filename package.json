@@ -5,6 +5,7 @@
     "dev:user": "vite",
     "dev:admin": "VITE_IS_ADMIN=true vite",
     "build": "tsc && vite build",
+    "build:admin": "VITE_IS_ADMIN=true tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
     "lint": "eslint --cache --fix",
