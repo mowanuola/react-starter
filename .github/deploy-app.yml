@@ -1,11 +1,10 @@
-
 name: Deploy
 
 on:
   push:
-    branches: ['admin/**', staging, master]
+    branches: [master]
   pull_request:
-    branches: [staging, master]
+    branches: [master]
 jobs:
   deploy-admin-app:
     runs-on: ubuntu-latest
